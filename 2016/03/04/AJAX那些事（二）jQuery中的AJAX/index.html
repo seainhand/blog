@@ -8,26 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="jQuery中AJAX的快捷APIjQuery为AJAX封装了许多可以快捷使用的API，如果请求不是很复杂，使用快捷API是一个明智的选择
 下面将介绍几个常用的快捷API
-$.get &amp;amp; $.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
-$.get(url,[data],[callback],[type])
-$.get(url,">
+jQuery.get &amp;amp; jQuery.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
+$.get(url,[data],[callback],[type])">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AJAX那些事（二）jQuery中的AJAX">
 <meta property="og:url" content="http://seainhand.github.io/2016/03/04/AJAX那些事（二）jQuery中的AJAX/index.html">
 <meta property="og:site_name" content="lixiang's blog">
 <meta property="og:description" content="jQuery中AJAX的快捷APIjQuery为AJAX封装了许多可以快捷使用的API，如果请求不是很复杂，使用快捷API是一个明智的选择
 下面将介绍几个常用的快捷API
-$.get &amp;amp; $.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
-$.get(url,[data],[callback],[type])
-$.get(url,">
-<meta property="og:updated_time" content="2016-03-04T15:49:59.000Z">
+jQuery.get &amp;amp; jQuery.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
+$.get(url,[data],[callback],[type])">
+<meta property="og:updated_time" content="2016-03-04T15:56:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX那些事（二）jQuery中的AJAX">
 <meta name="twitter:description" content="jQuery中AJAX的快捷APIjQuery为AJAX封装了许多可以快捷使用的API，如果请求不是很复杂，使用快捷API是一个明智的选择
 下面将介绍几个常用的快捷API
-$.get &amp;amp; $.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
-$.get(url,[data],[callback],[type])
-$.get(url,">
+jQuery.get &amp;amp; jQuery.post两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。
+$.get(url,[data],[callback],[type])">
   
     <link rel="alternative" href="/atom.xml" title="lixiang&#39;s blog" type="application/atom+xml">
   
@@ -171,7 +168,7 @@ $.get(url,">
   
     <div class="article-meta">
       <a href="/blog/2016/03/04/AJAX那些事（二）jQuery中的AJAX/" class="article-date">
-  	<time datetime="2016-03-04T15:49:59.000Z" itemprop="datePublished">2016-03-04</time>
+  	<time datetime="2016-03-04T15:56:13.000Z" itemprop="datePublished">2016-03-04</time>
 </a>
     </div>
   
@@ -202,7 +199,7 @@ $.get(url,">
       
         <h2 id="jQuery_u4E2DAJAX_u7684_u5FEB_u6377API"><a href="#jQuery_u4E2DAJAX_u7684_u5FEB_u6377API" class="headerlink" title="jQuery中AJAX的快捷API"></a>jQuery中AJAX的快捷API</h2><p>jQuery为AJAX封装了许多可以快捷使用的API，如果请求不是很复杂，使用快捷API是一个明智的选择</p>
 <p>下面将介绍几个常用的快捷API</p>
-<h3 id="24-get__26amp_3B__24-post"><a href="#24-get__26amp_3B__24-post" class="headerlink" title="$.get &amp; $.post"></a>$.get &amp; $.post</h3><p>两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。</p>
+<h3 id="jQuery-get__26amp_3B_jQuery-post"><a href="#jQuery-get__26amp_3B_jQuery-post" class="headerlink" title="jQuery.get &amp; jQuery.post"></a>jQuery.get &amp; jQuery.post</h3><p>两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。</p>
 <pre><code>$.get(url,[data],[callback],[type])
 $.get(url,[data],[callback],[type])
 </code></pre><p>url 表示当前请求所要发送的位置</p>
@@ -218,7 +215,7 @@ $.get(url,[data],[callback],[type])
 <p>callbacktype 表示一个表示响应状态成功还是失败的字符串，由于只有成功才回调，所以一般没用</p>
 <p>jqXHR jquery封装的xhr对象，一般将其当做普通的xhr对象</p>
 <p>一般的callback方法只用data一个参数</p>
-<h3 id="24_28selector_29-load"><a href="#24_28selector_29-load" class="headerlink" title="$(selector).load"></a>$(selector).load</h3><p>load方法用于加载页面片段</p>
+<h3 id="jQuery_28selector_29-load"><a href="#jQuery_28selector_29-load" class="headerlink" title="jQuery(selector).load"></a>jQuery(selector).load</h3><p>load方法用于加载页面片段</p>
 <pre><code>$(selector).load(url,[data],[callback])
 </code></pre><p>selector 表示加载请求返回的内容选择器</p>
 <p>data   表示当前请求所要携带的数据，必须为一个key-value形式的object对象</p>
@@ -228,7 +225,7 @@ $.get(url,[data],[callback],[type])
     console.log(&apos;返回成功&apos;);
 })
 </code></pre><p>即向’/test’位置发送一个key，value分别为a和1的数据对象，返回一个页面片段加载到id为container的html代码中，并打印“返回成功”。</p>
-<h3 id="24-getScript"><a href="#24-getScript" class="headerlink" title="$.getScript"></a>$.getScript</h3><p>getScript方法用来动态加载脚本</p>
+<h3 id="jQuery-getScript"><a href="#jQuery-getScript" class="headerlink" title="jQuery.getScript"></a>jQuery.getScript</h3><p>getScript方法用来动态加载脚本</p>
 <pre><code>$.getScript(url,[callback])
 </code></pre><p>url 表示脚本的位置</p>
 <p>callback 表示请求成功之后的回调方法</p>
