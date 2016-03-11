@@ -4,17 +4,45 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>lixiang&#39;s blog</title>
+  <title>AJAX那些事（一）基础 | lixiang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lixiang's blog">
-<meta property="og:url" content="http://seainhand.github.io/index.html">
+  <meta name="description" content="我们为什么要使用AJAX想象这样一个注册用户的场景
+当我们在注册用户的时候可能是这样一个表单
+
+如果我们的注册用户名不符合规范，需要将全部input填写完并提交注册后才会提醒，但是此时我们已经浪费的大量的时间,这样的用户体验十分差。
+我们需要的是在填写完用户名之后立即提醒用户名是否可以使用，如下图
+
+
+AJAX正是完成此需求的最常用的手段,
+什么是AJAXAJAX 是一个简称（缩写），分别由以下四">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX那些事（一）基础">
+<meta property="og:url" content="http://seainhand.github.io/2015/12/27/AJAX那些事（一）基础 /index.html">
 <meta property="og:site_name" content="lixiang's blog">
-<meta property="og:description">
+<meta property="og:description" content="我们为什么要使用AJAX想象这样一个注册用户的场景
+当我们在注册用户的时候可能是这样一个表单
+
+如果我们的注册用户名不符合规范，需要将全部input填写完并提交注册后才会提醒，但是此时我们已经浪费的大量的时间,这样的用户体验十分差。
+我们需要的是在填写完用户名之后立即提醒用户名是否可以使用，如下图
+
+
+AJAX正是完成此需求的最常用的手段,
+什么是AJAXAJAX 是一个简称（缩写），分别由以下四">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/res_blank.png">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/res_error.png">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/res_success.png">
+<meta property="og:updated_time" content="2016-03-11T13:38:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lixiang's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="AJAX那些事（一）基础">
+<meta name="twitter:description" content="我们为什么要使用AJAX想象这样一个注册用户的场景
+当我们在注册用户的时候可能是这样一个表单
+
+如果我们的注册用户名不符合规范，需要将全部input填写完并提交注册后才会提醒，但是此时我们已经浪费的大量的时间,这样的用户体验十分差。
+我们需要的是在填写完用户名之后立即提醒用户名是否可以使用，如下图
+
+
+AJAX正是完成此需求的最常用的手段,
+什么是AJAXAJAX 是一个简称（缩写），分别由以下四">
   
     <link rel="alternative" href="/atom.xml" title="lixiang&#39;s blog" type="application/atom+xml">
   
@@ -154,233 +182,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/03/11/test/" class="article-date">
-  	<time datetime="2016-03-11T13:28:03.000Z" itemprop="datePublished">2016-03-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/11/test/">test</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1<br>1<br>2<br>3<br>412<br>434<br>345<br>23<br>624<br>6<br>54</p>
-<p>6<br>3546<br>54</p>
-<p>6<br>5<br>56</p>
-<p>745</p>
-<p>7<br>56<br>75<br>648<br>7658</p>
-<p>9<br>6<br>70<br>987<br>0<br>8<br>9-<br>08<br>9</p>
-<p>56<br>45<br>346<br>35</p>
-<p>3<br>4<br>6u58<br>9<br>08</p>
-<p>4326<br>254<br>6<br>53<br>7<br>548<br>698<br>8<br>79<br>876</p>
-<p>6457<br>53<br>765<br>46<br>54<br>6<br>453<br>6<br>547<br>465<br>8<br>768<br>76<br>58<br>6<br>5<br>4<br>25<br>35<br>23<br>5<br>43<br>5<br>423<br>5</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-AJAX那些事（二）jQuery中的AJAX" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/03/04/AJAX那些事（二）jQuery中的AJAX/" class="article-date">
-  	<time datetime="2016-03-04T03:25:22.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/04/AJAX那些事（二）jQuery中的AJAX/">AJAX那些事（二）jQuery中的AJAX</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="jQuery_u4E2DAJAX_u7684_u5FEB_u6377API"><a href="#jQuery_u4E2DAJAX_u7684_u5FEB_u6377API" class="headerlink" title="jQuery中AJAX的快捷API"></a>jQuery中AJAX的快捷API</h2><p>jQuery为AJAX封装了许多可以快捷使用的API，如果请求不是很复杂，使用快捷API是一个明智的选择</p>
-<p>下面将介绍几个常用的快捷API</p>
-<h3 id="jQuery-get__26amp_3B_jQuery-post"><a href="#jQuery-get__26amp_3B_jQuery-post" class="headerlink" title="jQuery.get &amp; jQuery.post"></a>jQuery.get &amp; jQuery.post</h3><p>两个方法除了非别以 GET , POST 方法发送请求外，在参数，API功能和使用方法上完全相同。</p>
-<pre><code>$.get(url,[data],[callback],[type])
-$.get(url,[data],[callback],[type])
-</code></pre><p>url 表示当前请求所要发送的位置</p>
-<p>data  表示当前请求所要携带的数据，必须为一个key-value形式的object对象</p>
-<p>callback 表示请求成功之后的回调方法，请求发生错误无法使用</p>
-<p>type 指定当前请求返回数据的编码格式json，htm等，基本不用</p>
-<p>一个简单的ajax如下</p>
-<pre><code>$.get(&apos;/test&apos;),{a:1},function(data,callbacktype,jqXHR){
-    console.log(arguments);
-}):
-</code></pre><p>callback的方法有三个参数data,callbacktype,jqXHR</p>
-<p>data 表示请求成功后的响应数据</p>
-<p>callbacktype 表示一个表示响应状态成功还是失败的字符串，由于只有成功才回调，所以一般没用</p>
-<p>jqXHR jquery封装的xhr对象，一般将其当做普通的xhr对象</p>
-<p>一般的callback方法只用data一个参数</p>
-<h3 id="jQuery_28selector_29-load"><a href="#jQuery_28selector_29-load" class="headerlink" title="jQuery(selector).load"></a>jQuery(selector).load</h3><p>load方法用于加载页面片段</p>
-<pre><code>$(selector).load(url,[data],[callback])
-</code></pre><p>selector 表示加载请求返回的内容选择器</p>
-<p>data   表示当前请求所要携带的数据，必须为一个key-value形式的object对象</p>
-<p>callback 表示请求成功之后的回调方法</p>
-<p>简单的例子</p>
-<pre><code>$(#containter).load(&apos;/test&apos;,{a:1},function(){
-    console.log(&apos;返回成功&apos;);
-})
-</code></pre><p>即向’/test’位置发送一个key，value分别为a和1的数据对象，返回一个页面片段加载到id为container的html代码中，并打印“返回成功”。</p>
-<h3 id="jQuery-getScript"><a href="#jQuery-getScript" class="headerlink" title="jQuery.getScript"></a>jQuery.getScript</h3><p>getScript方法用来动态加载脚本</p>
-<pre><code>$.getScript(url,[callback])
-</code></pre><p>url 表示脚本的位置</p>
-<p>callback 表示请求成功之后的回调方法</p>
-<h2 id="jQuery_u4E2DAJAX_u7684_u6838_u5FC3_24-ajax"><a href="#jQuery_u4E2DAJAX_u7684_u6838_u5FC3_24-ajax" class="headerlink" title="jQuery中AJAX的核心$.ajax"></a>jQuery中AJAX的核心$.ajax</h2><p>$.ajax是jQuery对AJAX的底层封装，上面几个快捷API实际上都是调用这个方法<br>$.ajax有两种调用方式</p>
-<pre><code>$.ajax(url,[settings])
-$.ajax(settings)
-</code></pre><p>因为第一种比较机智，一般使用第一种，所以下文就使用第一种了</p>
-<p>url 表示当前请求所要发送的位置</p>
-<p>settings 表示一个object对象，指明了当前请求的行为方式如提交方法，回调函数，请求数据等</p>
-<p>下面将讲解settings中的各种参数</p>
-<h3 id="u5904_u7406_u54CD_u5E94_u7ED3_u679C_u7684_u56DE_u8C03_u51FD_u6570"><a href="#u5904_u7406_u54CD_u5E94_u7ED3_u679C_u7684_u56DE_u8C03_u51FD_u6570" class="headerlink" title="处理响应结果的回调函数"></a>处理响应结果的回调函数</h3><p>如success，error，statueCode，complete</p>
-<pre><code>$.ajax(&apos;/test&apos;,{
-
-    success:function(data){
-        console.log(&apos;成功&apos;);
-    },
-    //success参数表示当请求成功后的回调函数
-    //参数data表示返回的数据
-
-    error:function(jqXHR,textstatus,err){
-        console.log(&apos;失败&apos;);
-    },
-    //error参数表示当请求失败后的回调函数
-    //jqXHR:jquery封装的xhr对象，加强版xhr.
-    //textstatus:请求完成状态，返回失败即为error
-    //err:返回的异常信息
-
-    complete:function(jqXHR,textstatus){
-        console.log(&apos;statusCode: %d,statusText:%s&apos;,jqXHR.status,jqXHR.statusText);
-        console.log(&apos;statusText:%s&apos;,textstatus);
-    },
-    //complete无论请求失败或者成功都回调
-    //jqXHR:jquery封装的xhr对象，加强版xhr.
-    //textstatus:请求完成状态，返回失败即为error
-
-    statusCode:{
-        &apos;403&apos;:function(jqXHR,textstatus,err){
-            console.log(&apos;失败&apos;);
-        },
-        &apos;400&apos;:function(jqXHR,textstatus,err){
-            console.log(&apos;失败&apos;);
-        }
-    }
-    //statusCode属性的成员值是一个object对象，对象的每一项表示一个返回的http状态码，并且对应回调函数
-});
-</code></pre><h3 id="u8BF7_u6C42_u6570_u636E_u5C5E_u6027"><a href="#u8BF7_u6C42_u6570_u636E_u5C5E_u6027" class="headerlink" title="请求数据属性"></a>请求数据属性</h3><p>如data,processData,contentType,traditional</p>
-<pre><code>$.ajax(&apos;/test&apos;,{
-    data: JSON.stringify({
-        a:1,
-        b:2,
-        c:[3,4],
-    }),
-    processData:false,
-    contentType:&apos;application/json&apos;,
-    traditonal:true,
-    //data:表示当前请求所要携带的数据
-    //processData:表示是否根据响应的情况将data转换形式
-    //contentType:表示data的内容类型，此例中由于是json字符串所以data要使用JSON.stringify方法转换data
-    //traditonal:表示是否用传统方式编码，一般在data中包含数组时使用
-});
-</code></pre><h3 id="u8BF7_u6C42_u6570_u636E_u5C5E_u6027-1"><a href="#u8BF7_u6C42_u6570_u636E_u5C5E_u6027-1" class="headerlink" title="请求数据属性"></a>请求数据属性</h3><p>如dataType,dataFilter</p>
-<pre><code>$.ajax(&apos;/test&apos;,{
-    dataType: &apos;json&apos;,
-    dataFilter:function(data,type){
-        var d = JSON.parse(data);
-        return d;
-    }
-    //dataType:表示当前请求返回数据的目标类型
-    //dataFilter:表示一个将data进行变为目标类型预处理的函数,其参数其中data表示返回的原始文本数据，type表示目标类型。
-
-});
-</code></pre><h3 id="u5176_u4ED6_u5C5E_u6027"><a href="#u5176_u4ED6_u5C5E_u6027" class="headerlink" title="其他属性"></a>其他属性</h3><p>请求类型:type默认为GET，可以为GET、POST、PUT、DELETE等</p>
-<p>同步异步: async，默认为true，表示异步</p>
-<p>是否缓存: cache, 默认为true</p>
-<p>前置处理：beforeSend</p>
-<p>设置请求头: headers</p>
-<p>以上简单介绍了jQuery中的AJAX，如有必要更多将于后续篇章写出</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-AJAX那些事（一）基础 " class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-AJAX那些事（一）基础 " class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/blog/2015/12/27/AJAX那些事（一）基础 /" class="article-date">
@@ -396,12 +198,23 @@ $.ajax(settings)
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2015/12/27/AJAX那些事（一）基础 /">AJAX那些事（一）基础</a>
+    <h1 class="article-title" itemprop="name">
+      AJAX那些事（一）基础
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -533,20 +346,23 @@ xhr.send(JSON.stringfy({
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/03/04/AJAX那些事（二）jQuery中的AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          AJAX那些事（二）jQuery中的AJAX
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -555,11 +371,28 @@ xhr.send(JSON.stringfy({
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="AJAX那些事（一）基础 " data-title="AJAX那些事（一）基础" data-url="http://seainhand.github.io/blog/2015/12/27/AJAX那些事（一）基础 /"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-  
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -583,8 +416,8 @@ xhr.send(JSON.stringfy({
 		fancybox: true,
 		mathjax: true,
 		animate: undefined,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
