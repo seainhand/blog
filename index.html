@@ -156,6 +156,263 @@
 
       <div class="body-wrap">
   
+    <article id="post-Universal-Link（通用连接）完全实现！" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2017/01/21/Universal-Link（通用连接）完全实现！/" class="article-date">
+  	<time datetime="2017-01-21T08:47:08.000Z" itemprop="datePublished">2017-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/01/21/Universal-Link（通用连接）完全实现！/">Universal Link（通用链接）完全实现！</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>断更11个月，并不是死了，只是一不小心参加了工作。(￣▽￣)”</p>
+<p>在 ios9 和 ios9+ 中使用 Universal Link 可以做到点击短信或者邮件中的链接直接跳到app，或者从微信直接跳到app并且不需要进入微信的白名单这样的效果，这样的操作用户体验还是极好极好的呀。</p>
+<p>##两个域名</p>
+<p>首先你需要拥有两个域名，注意并不是子域名，但是类似于 a.domain.com 和 b.domain.com是可以的，a.domain.com/a 和 a.domain.com/b 是不可以的。</p>
+<p>##开发者中心配置<br>然后你需要在开发者中心做配置。具体是这样：开发者中心-&gt;Identitiers-&gt;App IDs-&gt;需要支持的应用App ID，在Application Services列表里有Associated Domains一条，把它变为Enabled就可以了，如下图</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5service.png" alt="开发者中心配置图"></p>
+<p>##IOS注册</p>
+<p>然后, 你必须在Xcode的capabilities里添加你的APP域名，并且使用“applinks: ”前置它，如图</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5capabilities.png" alt="capabilities配置图"></p>
+<p>这样APP会在第一次打开的时候从你配置的域名下，下载一个名叫apple-app-site-association的JSON文件，这个文件将会配置跳转允许的路径表，如下图</p>
+<p>##JSON文件</p>
+<p>这个名叫apple-app-site-association的文件使用JSON格式，如下</p>
+<pre><code>{
+    &quot;applinks&quot;: {
+        &quot;apps&quot;: [],
+        &quot;details&quot;: [
+            {
+                &quot;appID&quot;: &quot;lixiang.com.apple.shuai&quot;,
+                &quot;paths&quot;: [ &quot;/src/WebBundle/&quot;, &quot;/src/*&quot;]
+            }
+        ]
+    }
+}
+</code></pre><p> 1.这其中”apps” 只要有并且定义数组就可以了 并不需要填充</p>
+<p> 2.”appId” 是由”开发者的TeamID” + “.” + “APP的bundle”，组成的比如说TeamID为”lixiang”，应用的Bundle为”com.apple.shuai”，那么”appId”为”lixiang.com.apple.shuai”</p>
+<p> 3.”paths”为该域名下哪些路径可以链接跳转到APP，可以使用通配符”*”</p>
+<p>####请注意：</p>
+<p>1.apple-app-site-association文件没有后缀名，文件全名即为”apple-app-site-association”</p>
+<p>2.apple-app-site-association必须在跳转域名的根目录下，即在浏览器输入”<a href="https://b.domain.cn/apple-app-site-association&quot;即能下载apple-app-site-association文件" target="_blank" rel="external">https://b.domain.cn/apple-app-site-association&quot;即能下载apple-app-site-association文件</a></p>
+<p>##支持ssl</p>
+<p>接下来你需要使你准备的两个域名中的其中一个域名支持ssl，这个域名并不是你微信网页的域名，而是而是跳转链接的域名，也是”IOS注册”这一步中注册的的域名，当你完成上一步之后，第一次手机打开你的APP，都会自动前往这个注册的域名使用ssl的链接下载这个文件。</p>
+<p>##完成检验</p>
+<p>Apple有检测通用链接是否可用的网站:”<a href="https://search.developer.apple.com/appsearch-validation-tool/&quot;，输入你的跳转网址，当&quot;Universal" target="_blank" rel="external">https://search.developer.apple.com/appsearch-validation-tool/&quot;，输入你的跳转网址，当&quot;Universal</a> Link”一栏中为passed就可以了，然而当在开发模式的时候，会出现下图问题</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5error.png" alt="Apple网页错误图"></p>
+<p>在这种情况下，其实通用连接也可以使用了，只是相关APP在开发模式下，并没有上线而已</p>
+<p>有问题再联系博主QQ：396452902</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-前端经典问题（四）原型链、原型继承和类继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/03/19/前端经典问题（四）原型链、原型继承和类继承/" class="article-date">
+  	<time datetime="2016-03-19T05:14:15.000Z" itemprop="datePublished">2016-03-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/19/前端经典问题（四）原型链、原型继承和类继承/">前端经典问题（四）原型链、原型继承和类继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-前端经典问题（三）JS闭包和垃圾回收机制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/03/19/前端经典问题（三）JS闭包和垃圾回收机制/" class="article-date">
+  	<time datetime="2016-03-19T01:46:54.000Z" itemprop="datePublished">2016-03-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/19/前端经典问题（三）JS闭包和垃圾回收机制/">前端经典问题（三）JS闭包和垃圾回收机制</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-前端经典问题（二）跟老夫聊一聊浏览器兼容性的问题吧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/03/17/前端经典问题（二）跟老夫聊一聊浏览器兼容性的问题吧/" class="article-date">
+  	<time datetime="2016-03-17T14:50:31.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/17/前端经典问题（二）跟老夫聊一聊浏览器兼容性的问题吧/">前端经典问题（二）跟老夫聊一聊浏览器兼容性的问题吧~</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>兼容性是一个老生常谈的故事，但是作为一个爱问为什么的我，我还是要问一下，<b>浏览器兼容性真的有问题么？</b></p>
+<p>我们来看一下近三个月的浏览器市场份额。</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/%E5%89%8D%E7%AB%AF%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98%E4%BA%8C01.png" alt="近三个月浏览器市场份额"></p>
+<p>图片内容来自百度流量研究院。</p>
+<p>IE6和IE7所占市场份额加起来不到8%，而IE8也只有20%多一点。</p>
+<p>我们开心地发现，天哪终于没什么人用该死的IE6和IE7了，那是不是浏览器兼容性没有问题了？。</p>
+<p>我不禁快乐的想：“IE6和IE7，债见了，朋友~”</p>
+<p>然而工头有他自己的想法。</p>
+<p>###优雅降级和渐进增强</p>
+<p>这里就要提到两个概念：优雅降级和渐进增强。</p>
+<p>渐进增强(progressive enhancement)：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<p>优雅降级(graceful degradation)：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<p>两者的核心问题就是：我们优先支持谁？工头说了算~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-前端经典问题-一-当在浏览器地址栏输入一个网址的之后-将会发生什么" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -306,11 +563,11 @@ $.get(url,[data],[callback],[type])
       
         <h2 id="u6211_u4EEC_u4E3A_u4EC0_u4E48_u8981_u4F7F_u7528AJAX"><a href="#u6211_u4EEC_u4E3A_u4EC0_u4E48_u8981_u4F7F_u7528AJAX" class="headerlink" title="我们为什么要使用AJAX"></a>我们为什么要使用AJAX</h2><p>想象这样一个注册用户的场景</p>
 <p>当我们在注册用户的时候可能是这样一个表单</p>
-<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_blank.png" alt="resister1"></p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_blank.png" alt="一个普通表单"></p>
 <p>如果我们的注册用户名不符合规范，需要将全部input填写完并提交注册后才会提醒，但是此时我们已经浪费的大量的时间,这样的用户体验十分差。</p>
 <p>我们需要的是在填写完用户名之后立即提醒用户名是否可以使用，如下图</p>
-<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_error.png" alt="resister2"></p>
-<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_success.png" alt="resister2"></p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_error.png" alt="一个错误的表单"></p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/res_success.png" alt="一个符合规范的表单"></p>
 <p>AJAX正是完成此需求的最常用的手段,<br>
       
     </div>
@@ -347,7 +604,7 @@ $.get(url,[data],[callback],[type])
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 lixiang
+    		&copy; 2017 lixiang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

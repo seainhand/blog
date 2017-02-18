@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Universal Link（通用链接）完全实现！ | lixiang&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="断更11个月，并不是死了，只是一不小心参加了工作。(￣▽￣)”
+在 ios9 和 ios9+ 中使用 Universal Link 可以做到点击短信或者邮件中的链接直接跳到app，或者从微信直接跳到app并且不需要进入微信的白名单这样的效果，这样的操作用户体验还是极好极好的呀。
+##两个域名
+首先你需要拥有两个域名，注意并不是子域名，但是类似于 a.domain.com 和 b.domain.co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Universal Link（通用链接）完全实现！">
+<meta property="og:url" content="http://seainhand.github.io/2017/01/21/Universal-Link（通用连接）完全实现！/index.html">
+<meta property="og:site_name" content="lixiang's blog">
+<meta property="og:description" content="断更11个月，并不是死了，只是一不小心参加了工作。(￣▽￣)”
+在 ios9 和 ios9+ 中使用 Universal Link 可以做到点击短信或者邮件中的链接直接跳到app，或者从微信直接跳到app并且不需要进入微信的白名单这样的效果，这样的操作用户体验还是极好极好的呀。
+##两个域名
+首先你需要拥有两个域名，注意并不是子域名，但是类似于 a.domain.com 和 b.domain.co">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5service.png">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5capabilities.png">
+<meta property="og:image" content="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5error.png">
+<meta property="og:updated_time" content="2017-02-18T03:39:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Universal Link（通用链接）完全实现！">
+<meta name="twitter:description" content="断更11个月，并不是死了，只是一不小心参加了工作。(￣▽￣)”
+在 ios9 和 ios9+ 中使用 Universal Link 可以做到点击短信或者邮件中的链接直接跳到app，或者从微信直接跳到app并且不需要进入微信的白名单这样的效果，这样的操作用户体验还是极好极好的呀。
+##两个域名
+首先你需要拥有两个域名，注意并不是子域名，但是类似于 a.domain.com 和 b.domain.co">
+  
+    <link rel="alternative" href="/atom.xml" title="lixiang&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://7xpjpv.com1.z0.glb.clouddn.com/IMG_0128.PNG" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">lixiang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">目标是有八块腹肌的厨子，(≧▽≦)/ (ﾟДﾟ)!?我不是程序员么。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/blog/">主页</a></li>
+				        
+							<li><a href="/blog/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/seainhand/" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/li-xiang-38-88" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">lixiang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img src="http://7xpjpv.com1.z0.glb.clouddn.com/IMG_0128.PNG" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">lixiang</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">目标是有八块腹肌的厨子，(≧▽≦)/ (ﾟДﾟ)!?我不是程序员么。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/blog/">主页</a></li>
+		        
+					<li><a href="/blog/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/seainhand/" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/li-xiang-38-88" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Universal-Link（通用连接）完全实现！" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2017/01/21/Universal-Link（通用连接）完全实现！/" class="article-date">
+  	<time datetime="2017-01-21T08:47:08.000Z" itemprop="datePublished">2017-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Universal Link（通用链接）完全实现！
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>断更11个月，并不是死了，只是一不小心参加了工作。(￣▽￣)”</p>
+<p>在 ios9 和 ios9+ 中使用 Universal Link 可以做到点击短信或者邮件中的链接直接跳到app，或者从微信直接跳到app并且不需要进入微信的白名单这样的效果，这样的操作用户体验还是极好极好的呀。</p>
+<p>##两个域名</p>
+<p>首先你需要拥有两个域名，注意并不是子域名，但是类似于 a.domain.com 和 b.domain.com是可以的，a.domain.com/a 和 a.domain.com/b 是不可以的。</p>
+<p>##开发者中心配置<br>然后你需要在开发者中心做配置。具体是这样：开发者中心-&gt;Identitiers-&gt;App IDs-&gt;需要支持的应用App ID，在Application Services列表里有Associated Domains一条，把它变为Enabled就可以了，如下图</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5service.png" alt="开发者中心配置图"></p>
+<p>##IOS注册</p>
+<p>然后, 你必须在Xcode的capabilities里添加你的APP域名，并且使用“applinks: ”前置它，如图</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5capabilities.png" alt="capabilities配置图"></p>
+<p>这样APP会在第一次打开的时候从你配置的域名下，下载一个名叫apple-app-site-association的JSON文件，这个文件将会配置跳转允许的路径表，如下图</p>
+<p>##JSON文件</p>
+<p>这个名叫apple-app-site-association的文件使用JSON格式，如下</p>
+<pre><code>{
+    &quot;applinks&quot;: {
+        &quot;apps&quot;: [],
+        &quot;details&quot;: [
+            {
+                &quot;appID&quot;: &quot;lixiang.com.apple.shuai&quot;,
+                &quot;paths&quot;: [ &quot;/src/WebBundle/&quot;, &quot;/src/*&quot;]
+            }
+        ]
+    }
+}
+</code></pre><p> 1.这其中”apps” 只要有并且定义数组就可以了 并不需要填充</p>
+<p> 2.”appId” 是由”开发者的TeamID” + “.” + “APP的bundle”，组成的比如说TeamID为”lixiang”，应用的Bundle为”com.apple.shuai”，那么”appId”为”lixiang.com.apple.shuai”</p>
+<p> 3.”paths”为该域名下哪些路径可以链接跳转到APP，可以使用通配符”*”</p>
+<p>####请注意：</p>
+<p>1.apple-app-site-association文件没有后缀名，文件全名即为”apple-app-site-association”</p>
+<p>2.apple-app-site-association必须在跳转域名的根目录下，即在浏览器输入”<a href="https://b.domain.cn/apple-app-site-association&quot;即能下载apple-app-site-association文件" target="_blank" rel="external">https://b.domain.cn/apple-app-site-association&quot;即能下载apple-app-site-association文件</a></p>
+<p>##支持ssl</p>
+<p>接下来你需要使你准备的两个域名中的其中一个域名支持ssl，这个域名并不是你微信网页的域名，而是而是跳转链接的域名，也是”IOS注册”这一步中注册的的域名，当你完成上一步之后，第一次手机打开你的APP，都会自动前往这个注册的域名使用ssl的链接下载这个文件。</p>
+<p>##完成检验</p>
+<p>Apple有检测通用链接是否可用的网站:”<a href="https://search.developer.apple.com/appsearch-validation-tool/&quot;，输入你的跳转网址，当&quot;Universal" target="_blank" rel="external">https://search.developer.apple.com/appsearch-validation-tool/&quot;，输入你的跳转网址，当&quot;Universal</a> Link”一栏中为passed就可以了，然而当在开发模式的时候，会出现下图问题</p>
+<p><img src="http://7xpjpv.com1.z0.glb.clouddn.com/20170121%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5error.png" alt="Apple网页错误图"></p>
+<p>在这种情况下，其实通用连接也可以使用了，只是相关APP在开发模式下，并没有上线而已</p>
+<p>有问题再联系博主QQ：396452902</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2016/03/19/前端经典问题（四）原型链、原型继承和类继承/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端经典问题（四）原型链、原型继承和类继承</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Universal-Link（通用连接）完全实现！" data-title="Universal Link（通用链接）完全实现！" data-url="http://seainhand.github.io/blog/2017/01/21/Universal-Link（通用连接）完全实现！/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 lixiang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/blog/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
